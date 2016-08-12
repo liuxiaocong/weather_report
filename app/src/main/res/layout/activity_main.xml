@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.example.administrator.retrofit.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/city"
+                style="@style/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/now_weather_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="left|center_vertical"
+                fresco:placeholderImage="@null" />
+
+            <TextView
+                android:id="@+id/now_weather_text"
+                style="@style/data_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/second_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="当前温度" />
+
+            <TextView
+                android:id="@+id/temp_now"
+                style="@style/data_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp" />
+
+            <TextView
+                android:id="@+id/wind_style"
+                style="@style/second_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/wind_power"
+                style="@style/data_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                style="@style/second_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="今天的天气质量：" />
+
+            <TextView
+                android:id="@+id/air"
+                style="@style/data_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/suggest_bg"
+            android:elevation="5dp"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/suggest_one"
+                style="@style/default_text"
+                android:layout_marginTop="3dp"
+                android:textColor="#ffffff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/suggest_two"
+                style="@style/default_text"
+                android:textColor="#ffffff"
+                android:layout_marginTop="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/suggest_three"
+                style="@style/default_text"
+                android:textColor="#ffffff"
+                android:layout_marginTop="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="200dp"
+            android:layout_height="1px"
+            android:layout_gravity="center|center_vertical"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:background="#FF8600" />
+
+        <TextView
+            style="@style/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未来三天天气预报"
+            android:textColor="#555555"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/future_bg">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/future_weather_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

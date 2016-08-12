@@ -1,0 +1,84 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="android:windowFullscreen">true</item>-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="title">
+        <item name="android:textSize">24dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:layout_marginRight">40dp</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+    </style>
+
+    <style name="second_title">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">#111111</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+    </style>
+
+    <style name="data_blue">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#005DFA</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+    </style>
+
+    <style name="data_red">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#DD4F43</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+    </style>
+
+    <style name="default_text">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+    </style>
+
+
+    <style name="title_s">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:layout_marginRight">25dp</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+    </style>
+
+    <style name="second_title_s">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">#111111</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+    </style>
+
+    <style name="data_blue_s">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#005DFA</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+    </style>
+
+    <style name="data_red_s">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#DD4F43</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+    </style>
+
+    <style name="default_text_s">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+    </style>
+</resources>
