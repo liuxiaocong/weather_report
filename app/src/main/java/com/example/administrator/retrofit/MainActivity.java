@@ -1,10 +1,13 @@
 package com.example.administrator.retrofit;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -13,6 +16,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
     List<String> mRandomColorList = new ArrayList<>();
 
+    Random random;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +77,16 @@ public class MainActivity extends AppCompatActivity {
         mRandomColorList.add("#66cccc");
         mRandomColorList.add("#336699");
         mRandomColorList.add("#8080c0");
-
+        random = new Random();
+        int target = random.nextInt(mRandomColorList.size());
+        setFirstSuggestBg(mRandomColorList.get(target));
+        mRandomColorList.remove(target);
+        target = random.nextInt(mRandomColorList.size());
+        setSecondSuggestBg(mRandomColorList.get(target));
+        mRandomColorList.remove(target);
+        target = random.nextInt(mRandomColorList.size());
+        setThirdSuggestBg(mRandomColorList.get(target));
+        mRandomColorList.remove(target);
 
         WeatherService service = retrofit.create(WeatherService.class);
         mCall = service.getWeather("CN101281501");
@@ -115,5 +130,49 @@ public class MainActivity extends AppCompatActivity {
         suggestOne.setText(bean.getRoot().get(0).getSuggestion().getComf().getTxt());
         suggestTwo.setText(bean.getRoot().get(0).getSuggestion().getDrsg().getTxt());
         suggestThree.setText(bean.getRoot().get(0).getSuggestion().getFlu().getTxt());
+    }
+
+    public static int getPxFromDp(Context context, int dp) {
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        return (int) (dp * metrics.density);
+    }
+
+    private void setFirstSuggestBg(String color) {
+        try {
+            RadiusDrawable cd = new RadiusDrawable(getPxFromDp(this, 5),
+                    getPxFromDp(this, 5),
+                    0,
+                    0,
+                    Color.parseColor(color));
+            suggestOne.setBackgroundDrawable(cd);
+        } catch (Exception e) {
+            Log.d("setFirstSuggestBg", e.toString());
+        }
+    }
+
+    private void setSecondSuggestBg(String color) {
+        try {
+            RadiusDrawable cd = new RadiusDrawable(0,
+                    0,
+                    0,
+                    0,
+                    Color.parseColor(color));
+            suggestTwo.setBackgroundDrawable(cd);
+        } catch (Exception e) {
+            Log.d("setSecondSuggestBg", e.toString());
+        }
+    }
+
+    private void setThirdSuggestBg(String color) {
+        try {
+            RadiusDrawable cd = new RadiusDrawable(0,
+                    0,
+                    getPxFromDp(this, 5),
+                    getPxFromDp(this, 5),
+                    Color.parseColor(color));
+            suggestThree.setBackgroundDrawable(cd);
+        } catch (Exception e) {
+            Log.d("setThirdSuggestBg", e.toString());
+        }
     }
 }
